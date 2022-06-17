@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Todos from "../component/todos";
 import AddTodo from "../component/AddTodo";
 import "../pages/Home.css";
+import { id } from "date-fns/locale";
 
 class Home extends Component {
   // Create a default state of this component with an empty list of todos.
@@ -38,6 +39,10 @@ class Home extends Component {
     this.setState({
       todos: new_list,
     });
+    //Checking for duplicates
+    if ((this.state.todos)){
+      return;
+    } 
   };
   render() {
     return (
