@@ -39,9 +39,9 @@ class Home extends Component {
     this.setState({
       todos: new_list,
     });
-
+    
     //Checking for duplicates
-    if (new_list.find(t => t.content === todo.content)){
+    if (this.state.todos.find(t => t.content === todo.content)){
       return;
     } else {
       new_list = [...this.state.todos, todo];
