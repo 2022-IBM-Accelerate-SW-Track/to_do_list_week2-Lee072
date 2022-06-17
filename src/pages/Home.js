@@ -40,7 +40,7 @@ class Home extends Component {
       todos: new_list,
     });
     //Checking for duplicates
-    if ((this.state.todos)){
+    if (this.state.todos.find(t => t.content === todo.content)){
       return;
     } 
   };
